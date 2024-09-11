@@ -1,7 +1,7 @@
 .Navbar {
-  background-color: rgba(0, 0, 0, 0.0); /* Fondo completamente transparente por defecto */
+  background-color: rgba(0, 0, 0, 0.0); /* Fondo transparente por defecto */
   color: white;
-  padding: 0.2rem 1rem; /* Padding reducido */
+  padding: 1rem 5%; /* Padding ajustado */
   font-family: 'Poppins', sans-serif;
   box-shadow: none; /* Sin sombras en la barra */
   position: fixed; /* Fija la barra en la parte superior */
@@ -11,14 +11,18 @@
   transition: background-color 0.3s ease; /* Transición de color de fondo */
 }
 
-.Navbar:hover {
-  background-color: rgba(0, 0, 0, 0.2); /* Fondo visible al hacer hover */
+.Navbar.transparent {
+  background-color: rgba(0, 0, 0, 0.0); /* Fondo completamente transparente */
+}
+
+.Navbar.dark {
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro cuando se hace scroll */
 }
 
 .Navbar-brand {
   display: flex;
   align-items: center;
-  margin-right: auto; /* Empuja el logo a la izquierda */
+  margin-right: 2rem; /* Espacio entre el logo y el menú */
 }
 
 .Navbar-logo-img {
@@ -28,7 +32,7 @@
 }
 
 .Navbar-logo-text {
-  font-size: 0.9rem; /* Tamaño de fuente ajustado */
+  font-size: 1rem; /* Tamaño de fuente ajustado */
   color: #B3B2AE;
   font-weight: 300;
   letter-spacing: 0.5px;
@@ -38,17 +42,17 @@
 .Navbar-menu {
   display: flex;
   align-items: center; /* Alinea los elementos verticalmente */
-  gap: 1rem; /* Espacio entre los elementos */
+  gap: 1.5rem; /* Espacio entre los elementos */
 }
 
 .Navbar-menu .nav-link {
   color: #a9a9a9;
-  font-size: 0.8rem; /* Tamaño de fuente ajustado */
+  font-size: 0.9rem; /* Tamaño de fuente ajustado */
   font-weight: 300;
   letter-spacing: 0.5px;
   position: relative;
   transition: color 0.3s ease, background-color 0.3s ease; /* Transiciones para color y fondo */
-  padding: 0.3rem 0.5rem; /* Padding ajustado */
+  padding: 0.5rem 0.75rem; /* Padding ajustado */
   border-radius: 12px; /* Bordes más redondeados */
   white-space: nowrap; /* Evita el desbordamiento de texto */
 }
@@ -71,10 +75,6 @@
 
 .Navbar-menu .nav-link:hover::after {
   width: 100%;
-}
-
-.Navbar-collapse {
-  flex-grow: 0;
 }
 
 @media (max-width: 992px) {
@@ -104,7 +104,7 @@
   }
 
   .Navbar-menu .nav-link {
-    font-size: 0.8rem; /* Tamaño de fuente ajustado */
+    font-size: 1rem; /* Tamaño de fuente ajustado */
     padding: 0.5rem 1rem; /* Padding más amplio */
     text-align: center;
     transition: padding 0.3s ease; /* Transición para el padding */
@@ -113,10 +113,10 @@
 
 @media (min-width: 1200px) {
   .Navbar-logo-text {
-    font-size: 0.9rem; /* Tamaño de fuente ajustado para pantallas grandes */
+    font-size: 1.1rem; /* Tamaño de fuente ajustado para pantallas grandes */
   }
 
   .Navbar-menu .nav-link {
-    font-size: 0.8rem; /* Tamaño de fuente ajustado para pantallas grandes */
+    font-size: 0.9rem; /* Tamaño de fuente ajustado para pantallas grandes */
   }
 }
