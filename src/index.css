@@ -1,0 +1,23 @@
+/* Estilo global para el fondo de pantalla */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url('./assets/LogoGold.jpg') no-repeat center center fixed;
+  background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+  color: #333; /* Color de texto por defecto */
+  min-height: 100vh; /* Asegura que el cuerpo tenga al menos el alto de la pantalla */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilo para el contenedor principal */
+.App {
+  flex: 1; /* Permite que el contenedor principal se expanda para llenar el espacio disponible */
+}
+
+/* Ajustes adicionales para mejorar la visualización en dispositivos móviles */
+@media (max-width: 768px) {
+  body {
+    background-position: center center; /* Asegura que la imagen de fondo esté centrada */
+  }
+}

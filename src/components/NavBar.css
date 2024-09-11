@@ -1,0 +1,122 @@
+.Navbar {
+  background-color: rgba(0, 0, 0, 0.0); /* Fondo completamente transparente por defecto */
+  color: white;
+  padding: 0.2rem 1rem; /* Padding reducido */
+  font-family: 'Poppins', sans-serif;
+  box-shadow: none; /* Sin sombras en la barra */
+  position: fixed; /* Fija la barra en la parte superior */
+  width: 100%; /* Ocupa el ancho completo */
+  top: 0; /* Posición en la parte superior */
+  z-index: 1000; /* Asegura que esté encima del contenido */
+  transition: background-color 0.3s ease; /* Transición de color de fondo */
+}
+
+.Navbar:hover {
+  background-color: rgba(0, 0, 0, 0.2); /* Fondo visible al hacer hover */
+}
+
+.Navbar-brand {
+  display: flex;
+  align-items: center;
+  margin-right: auto; /* Empuja el logo a la izquierda */
+}
+
+.Navbar-logo-img {
+  height: 30px; /* Tamaño reducido del logo */
+  width: auto;
+  margin-right: 0.5rem; /* Espacio entre el logo y el texto */
+}
+
+.Navbar-logo-text {
+  font-size: 0.9rem; /* Tamaño de fuente ajustado */
+  color: #B3B2AE;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.Navbar-menu {
+  display: flex;
+  align-items: center; /* Alinea los elementos verticalmente */
+  gap: 1rem; /* Espacio entre los elementos */
+}
+
+.Navbar-menu .nav-link {
+  color: #a9a9a9;
+  font-size: 0.8rem; /* Tamaño de fuente ajustado */
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  position: relative;
+  transition: color 0.3s ease, background-color 0.3s ease; /* Transiciones para color y fondo */
+  padding: 0.3rem 0.5rem; /* Padding ajustado */
+  border-radius: 12px; /* Bordes más redondeados */
+  white-space: nowrap; /* Evita el desbordamiento de texto */
+}
+
+.Navbar-menu .nav-link:hover {
+  color: #e2e0e0;
+  background-color: rgba(0, 0, 0, 0.2); /* Fondo visible al hacer hover */
+}
+
+.Navbar-menu .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px; /* Línea más fina */
+  bottom: -1px;
+  left: 0;
+  background-color: #D5DBDB;
+  transition: width 0.3s ease; /* Transición para la línea inferior */
+}
+
+.Navbar-menu .nav-link:hover::after {
+  width: 100%;
+}
+
+.Navbar-collapse {
+  flex-grow: 0;
+}
+
+@media (max-width: 992px) {
+  .Navbar {
+    padding: 0.2rem; /* Reducción de padding en pantallas pequeñas */
+  }
+
+  .Navbar-collapse {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro con más opacidad para el menú colapsado */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 0.5rem; /* Reducido padding para el menú colapsado */
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.3s ease; /* Transición para la visibilidad */
+  }
+
+  .Navbar-collapse.show {
+    opacity: 1; /* Mostrar menú cuando se abre */
+  }
+
+  .Navbar-menu {
+    display: block; /* Alinea verticalmente en pantallas pequeñas */
+    gap: 0.5rem; /* Espacio entre los elementos */
+  }
+
+  .Navbar-menu .nav-link {
+    font-size: 0.8rem; /* Tamaño de fuente ajustado */
+    padding: 0.5rem 1rem; /* Padding más amplio */
+    text-align: center;
+    transition: padding 0.3s ease; /* Transición para el padding */
+  }
+}
+
+@media (min-width: 1200px) {
+  .Navbar-logo-text {
+    font-size: 0.9rem; /* Tamaño de fuente ajustado para pantallas grandes */
+  }
+
+  .Navbar-menu .nav-link {
+    font-size: 0.8rem; /* Tamaño de fuente ajustado para pantallas grandes */
+  }
+}
