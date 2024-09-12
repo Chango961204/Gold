@@ -1,15 +1,139 @@
-/* src/pages/Home.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+@font-face {
+  font-family: 'Azonix';
+  src: url('../fonts/azonix/Azonix.otf') format('truetype');
+}
+
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes cardSlideIn {
+  from{
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .Home {
-  padding-top: 60px; /* Ajusta este valor para que coincida con la altura de la barra de navegación */
-  padding-bottom: 20px; /* Ajusta si es necesario para dejar espacio para el pie de página */
-  text-align: center;
+  padding-top: 80px; 
+  text-align: center; 
 }
 
-.Home h1 {
-  margin-top: 0;
-  font-size: 2rem;
+.Home-content {
+  padding: 2.5rem; 
 }
 
-.Home p {
-  font-size: 1.2rem;
+h1 {
+  font-size: 8rem; 
+  color: #fefcfc; 
+  font-family: 'Azonix', sans-serif; 
+  animation: slideIn 1.5s ease-out;
+}
+
+h2 {
+  font-size: 1.5rem; 
+  color: #ffffff; 
+  font-family: 'Poppins', sans-serif;
+  animation: slideIn 2.5s ease-out;
+}
+
+h3 {
+  font-size: 1.5rem; 
+  color: #ffffff;
+  font-family: 'Azonix', sans-serif; 
+  animation: slideIn 2.5s ease-out;
+}
+
+.Home-cards {
+  display: flex;
+  justify-content: center;
+  gap: 6.5rem;
+  margin-top: 5rem;
+}
+
+.Home-card {
+  width: 300px;
+  border: darkgray; 
+  border-radius: 12px; 
+  background-image: url('../assets/aguilashop.png'); 
+  background-size: cover; 
+  background-position: center; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  position: relative; 
+  height: 200px; 
+  width: 300px; 
+  animation: cardSlideIn 1.5s ease-out; 
+
+}
+
+.Home-card:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+}
+
+.Home-card-content {
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  width: 80%; 
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.6); 
+  border-radius: 8px; 
+  transition: background-color 0.3s ease;
+}
+
+.Home-card:hover .Home-card-content {
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo más oscuro en hover */
+}
+
+.Home-card-title, .Home-card-text {
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-family: 'Azonix', sans-serif; 
+  animation: slideIn 1.5s ease-out;
+  color:rgb(175, 173, 173)
+
+
+}
+
+.Home-card:hover .Home-card-title 
+{
+  color: #f9f8f8; 
+}
+.Home-card:hover .Home-card-text {
+  color: #e5e4e4; 
+  transform: scale(1.1); 
+  
+}
+
+.Home-card-button {
+  background-color: #007bff; 
+  border: none; 
+  border-radius: 8px; 
+  font-weight: 500; 
+  color: #ffffff; 
+  padding: 0.5rem 1rem; 
+  text-decoration: none; 
+  display: inline-block; 
+  transition: background-color 0.3s ease; 
+  animation: slideIn 3.5s ease-out;
+}
+
+.Home-card-button:hover {
+  background-color: #0056b3; 
 }

@@ -1,8 +1,9 @@
-/* Estilo global para el fondo de pantalla */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: url('./assets/LogoGold.jpg') no-repeat center center fixed;
+  background: url('./assets/aguilashop.png') no-repeat center center fixed;
   background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
   color: #333; /* Color de texto por defecto */
   min-height: 100vh; /* Asegura que el cuerpo tenga al menos el alto de la pantalla */

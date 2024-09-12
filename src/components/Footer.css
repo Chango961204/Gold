@@ -1,4 +1,8 @@
-/* Footer.css */
+@font-face {
+  font-family: 'Azonix';
+  src: url('../fonts/azonix/Azonix.otf') format('truetype');
+}
+
 .Footer {
   background-color: rgba(51, 51, 51, 0.8); /* Fondo oscuro con opacidad */
   color: white;
@@ -9,6 +13,7 @@
   box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2); /* Sombra sutil */
   backdrop-filter: blur(5px); /* Efecto de desenfoque reducido */
   transition: background-color 0.3s ease; /* Transición suave para el cambio de color de fondo */
+  font-family: 'Azonix', sans-serif; /* Cambiado a Azonix */
 }
 
 .Footer-logo {

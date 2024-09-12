@@ -1,4 +1,51 @@
 .About {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   padding: 2rem;
+}
+
+.About-card {
+  width: 80%;
+  max-width: 800px;
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.5); /* Transparencia */
+  backdrop-filter: blur(10px); /* Desenfoque del fondo */
+  color: #fefcfc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1s ease-out;
+}
+
+.About-card-title {
+  font-size: 2rem;
+  font-family: 'Azonix', sans-serif;
+  margin-bottom: 1rem;
   text-align: center;
+}
+
+.About-card-text {
+  font-size: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  animation: fadeInUp 1.5s ease-out;
+}
+
+.About-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

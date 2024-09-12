@@ -1,8 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+@font-face {
+  font-family: 'Azonix';
+  src: url('../fonts/azonix/Azonix.otf') format('truetype');
+}
+
 .Navbar {
   background-color: rgba(0, 0, 0, 0.0); /* Fondo transparente por defecto */
   color: white;
   padding: 1rem 5%; /* Padding ajustado */
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Azonix', sans-serif; /* Cambiado a Azonix */
   box-shadow: none; /* Sin sombras en la barra */
   position: fixed; /* Fija la barra en la parte superior */
   width: 100%; /* Ocupa el ancho completo */

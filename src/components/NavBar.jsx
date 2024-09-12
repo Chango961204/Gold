@@ -41,8 +41,12 @@ const CustomNavbar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto Navbar-menu">
             <Nav.Link href="/">Inicio</Nav.Link>
+            <Nav.Link href="/Precios">Precios</Nav.Link>
+            <Nav.Link href="/Venta">Venta</Nav.Link>
             <Nav.Link href="/about">¿Quiénes Somos?</Nav.Link>
             <Nav.Link href="/contact">Contacto</Nav.Link>
+            <Nav.Link href="/Funcionamiento">Como Funciona</Nav.Link>
+            <Nav.Link href="/Preguntas">Preguntas Frecuentes</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

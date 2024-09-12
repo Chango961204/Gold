@@ -1,7 +1,7 @@
 // src/components/Footer.jsx
 import React from 'react';
 import './Footer.css'; // Asegúrate de importar los estilos del pie de página
-import Logo from '../assets/LogoGold.jpg'
+import Logo from '../assets/LogoA.png'
 
 function Footer() {
   return (
