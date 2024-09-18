@@ -1,0 +1,84 @@
+/* src/pages/Venta.css */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 20%); /* Inicia un poco arriba */
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0); /* Finaliza en la posición deseada */
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 20%); /* Se mueve un poco hacia arriba */
+  }
+}
+
+.gold-price-container {
+  position: fixed;
+  bottom: 8%; /* Asegura que esté en la parte inferior de la pantalla */
+  left: 50%;
+  transform: translate(-50%, 0);
+  text-align: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.7); /* Fondo más oscuro para mejor contraste */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  width: 90%;
+  max-width: 800px;
+  font-family: 'Poppins', sans-serif;
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards; /* Aplica la animación de entrada */
+}
+
+.gold-price-container h1 {
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+  margin-bottom: 1rem;
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.price-table th, .price-table td {
+  padding: 1rem;
+  border: 1px solid #333;
+  text-align: center;
+}
+
+.price-table th {
+  color: #ffcc00;
+  font-weight: 600;
+}
+
+.price-table td {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.price-table tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.5); /* Alterna colores para mejor legibilidad */
+}
+
+.price-table tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+h3 {
+  color: white;
+  margin-bottom: 1rem;
+  font-size:medium;
+}

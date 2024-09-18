@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import AppRoutes from './routes/routes';
 import Footer from './components/Footer'; // Importa el componente Footer
 import './App.css';
+import './styles/styles.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 

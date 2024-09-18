@@ -1,0 +1,153 @@
+.Contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    min-height: 100vh;
+    padding-top: 15vh; /* Ajusta el espacio superior para que las tarjetas estén más abajo de la mitad */
+}
+
+.Contact-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1200px;
+    position: fixed; /* Mantiene el contenedor de tarjetas fijo */
+    top: 60%; /* Ajusta la posición vertical para que las tarjetas estén más abajo de la mitad */
+    left: 50%;
+    transform: translate(-50%, 0); /* Centra el contenedor horizontalmente */
+    z-index: 1000; /* Asegura que el contenedor esté por encima de otros elementos */
+}
+
+.Contact-card {
+    flex: 1;
+    min-width: 150px;
+    max-width: 300px;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    opacity: 1;
+    animation: slideUp 1s ease-out forwards;
+}
+
+/* Efecto hover para las tarjetas de contacto */
+.Contact-card:hover {
+    transform: translateY(-10px) rotate(3deg);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    filter: brightness(1.2);
+}
+
+/* Títulos de las tarjetas */
+.Contact-card-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+/* Botón de las tarjetas */
+.Contact-card-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    border: 1px solid white;
+    color: white;
+    background-color: transparent;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.Contact-card-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Animaciones */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para pantallas pequeñas (teléfonos) */
+@media (max-width: 576px) {
+    .Contact {
+        padding-top: 5vh; /* Ajusta el espacio superior para pantallas pequeñas */
+    }
+    
+    .Contact-cards {
+        top: 50%; /* Ajusta la posición vertical para pantallas pequeñas */
+    }
+
+    .Contact-card {
+        max-width: 90%; /* Aumenta el ancho máximo para pantallas pequeñas */
+    }
+
+    .Contact-card-title {
+        font-size: 1.25rem; /* Ajusta el tamaño del título para pantallas pequeñas */
+    }
+
+    .Contact-card-button {
+        font-size: 0.875rem; /* Ajusta el tamaño de la fuente del botón para pantallas pequeñas */
+    }
+}
+
+/* Estilos para pantallas medianas (tabletas) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .Contact {
+        padding-top: 10vh; /* Ajusta el espacio superior para pantallas medianas */
+    }
+    
+    .Contact-cards {
+        top: 55%; /* Ajusta la posición vertical para pantallas medianas */
+    }
+
+    .Contact-card {
+        max-width: 45%; /* Ajusta el ancho máximo para pantallas medianas */
+    }
+
+    .Contact-card-title {
+        font-size: 1.375rem; /* Ajusta el tamaño del título para pantallas medianas */
+    }
+
+    .Contact-card-button {
+        font-size: 0.9rem; /* Ajusta el tamaño de la fuente del botón para pantallas medianas */
+    }
+}
+
+/* Estilos para pantallas grandes (escritorios) */
+@media (min-width: 769px) {
+    .Contact {
+        padding-top: 10vh; /* Mantiene el espacio superior para pantallas grandes */
+    }
+
+    .Contact-cards {
+        top: 60%; /* Mantiene la posición vertical para pantallas grandes */
+    }
+
+    .Contact-card {
+        max-width: 30%; /* Mantiene el ancho máximo para pantallas grandes */
+    }
+
+    .Contact-card-title {
+        font-size: 1.5rem; /* Mantiene el tamaño del título para pantallas grandes */
+    }
+
+    .Contact-card-button {
+        font-size: 1rem; /* Mantiene el tamaño de la fuente del botón para pantallas grandes */
+    }
+}

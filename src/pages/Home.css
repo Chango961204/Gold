@@ -1,139 +1,95 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-@font-face {
-  font-family: 'Azonix';
-  src: url('../fonts/azonix/Azonix.otf') format('truetype');
-}
-
-
-@keyframes slideIn {
-  from {
-    transform: translateX(-100%);
+@keyframes slideUp {
+  0% {
     opacity: 0;
+    transform: translateY(100px); /* Comienza desde abajo */
   }
-  to {
-    transform: translateX(0);
+  100% {
     opacity: 1;
-  }
-}
-
-@keyframes cardSlideIn {
-  from{
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  to{
-    transform: translateY(0);
-    opacity: 1;
+    transform: translateY(0); /* Termina en su posición original */
   }
 }
 
 .Home {
-  padding-top: 80px; 
-  text-align: center; 
+  position: relative; /* Asegura que los elementos hijos se posicionen correctamente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Asegura que el contenido esté centrado verticalmente */
+  overflow: hidden; /* Evita el desbordamiento */
 }
 
 .Home-content {
-  padding: 2.5rem; 
-}
-
-h1 {
-  font-size: 8rem; 
-  color: #fefcfc; 
-  font-family: 'Azonix', sans-serif; 
-  animation: slideIn 1.5s ease-out;
-}
-
-h2 {
-  font-size: 1.5rem; 
-  color: #ffffff; 
-  font-family: 'Poppins', sans-serif;
-  animation: slideIn 2.5s ease-out;
-}
-
-h3 {
-  font-size: 1.5rem; 
-  color: #ffffff;
-  font-family: 'Azonix', sans-serif; 
-  animation: slideIn 2.5s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .Home-cards {
-  display: flex;
-  justify-content: center;
-  gap: 6.5rem;
-  margin-top: 5rem;
+  position: fixed; /* Fija la tarjeta para que permanezca en su lugar al hacer scroll */
+  bottom: 25%; /* Ajusta la distancia desde la parte inferior de la ventana */
+  max-width: 300px; /* Tamaño máximo de la tarjeta */
+  animation: slideUp 1s ease-out; /* Aplica la animación al cargar la página */
+  animation-fill-mode: forwards; /* Asegura que la animación se mantenga en la posición final */
 }
 
 .Home-card {
-  width: 300px;
-  border: darkgray; 
-  border-radius: 12px; 
-  background-image: url('../assets/aguilashop.png'); 
-  background-size: cover; 
-  background-position: center; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
-  position: relative; 
-  height: 200px; 
-  width: 300px; 
-  animation: cardSlideIn 1.5s ease-out; 
-
+  border: none; /* Elimina el borde de la tarjeta */
+  border-radius: 20px; /* Bordes redondeados */
+  background: rgba(255, 255, 255, 0.1); /* Fondo blanco con opacidad */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  padding: 1rem;
+  text-align: center;
+  backdrop-filter: blur(10px); /* Desenfoque del fondo detrás de la tarjeta */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para transformaciones y sombras */
 }
 
 .Home-card:hover {
-  transform: translateY(-5px); 
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+  transform: translateY(-10px); /* Desplazamiento hacia arriba al hacer hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más prominente al hacer hover */
 }
 
-.Home-card-content {
-  position: absolute; 
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); 
-  width: 80%; 
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.6); 
-  border-radius: 8px; 
-  transition: background-color 0.3s ease;
+.Home-card-background {
+  padding: 0;
 }
 
-.Home-card:hover .Home-card-content {
-  background-color: rgba(0, 0, 0, 0.8); /* Fondo más oscuro en hover */
-}
-
-.Home-card-title, .Home-card-text {
-  transition: color 0.3s ease, transform 0.3s ease;
-  font-family: 'Azonix', sans-serif; 
-  animation: slideIn 1.5s ease-out;
-  color:rgb(175, 173, 173)
-
-
-}
-
-.Home-card:hover .Home-card-title 
-{
-  color: #f9f8f8; 
-}
-.Home-card:hover .Home-card-text {
-  color: #e5e4e4; 
-  transform: scale(1.1); 
-  
+.Home-card-title {
+  font-size: 1.2rem;
+  font-weight: 600; /* Negrita para el título */
+  color: rgb(255, 255, 255);
+  margin-bottom: 0.5rem;
 }
 
 .Home-card-button {
-  background-color: #007bff; 
-  border: none; 
-  border-radius: 8px; 
-  font-weight: 500; 
-  color: #ffffff; 
-  padding: 0.5rem 1rem; 
-  text-decoration: none; 
-  display: inline-block; 
-  transition: background-color 0.3s ease; 
-  animation: slideIn 3.5s ease-out;
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo transparente */
+  border: 1px solid white; /* Borde blanco para mayor visibilidad */
+  border-radius: 20px; /* Bordes redondeados para el botón */
+  color: white; /* Color del texto del botón */
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 2.3s ease; /* Transición suave para el hover */
 }
 
 .Home-card-button:hover {
-  background-color: #0056b3; 
+  background-color: rgba(255, 255, 255, 0.3); /* Fondo ligeramente más visible al hacer hover */
+}
+
+/* Imagen de fondo (opcional) */
+.Home-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/sellotransparente.png'); /* Reemplaza con la ruta de tu imagen */
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* Asegura que la imagen de fondo esté detrás del contenido de la tarjeta */
+  border-radius: 20px; /* Bordes redondeados para la imagen de fondo */
+  opacity: 0.1; /* Ajusta la opacidad según sea necesario */
 }

@@ -1,24 +1,89 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
+
+@font-face {
+  font-family: 'Azonix';
+  src: url('../fonts/azonix/Azonix.otf') format('opentype');
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes cardSlideIn {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: url('./assets/aguilashop.png') no-repeat center center fixed;
-  background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
-  color: #333; /* Color de texto por defecto */
-  min-height: 100vh; /* Asegura que el cuerpo tenga al menos el alto de la pantalla */
+  font-family: 'Poppins', sans-serif;
+  background: url('./assets/fondo.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  margin: 0; /* Asegura que no haya margen por defecto */
+  padding: 0; /* Asegura que no haya padding por defecto */
 }
 
-/* Estilo para el contenedor principal */
+/* Ajusta el contenido principal */
 .App {
-  flex: 1; /* Permite que el contenedor principal se expanda para llenar el espacio disponible */
+  flex: 1;
+  margin: 0 auto;
+  text-align: center;
+  font-size: clamp(24px, 4vw + 1rem, 48px);
+  padding: 2rem; /* Añade un padding para mejorar la legibilidad */
 }
 
-/* Ajustes adicionales para mejorar la visualización en dispositivos móviles */
+/* Ajustes para pantallas pequeñas */
 @media (max-width: 768px) {
   body {
-    background-position: center center; /* Asegura que la imagen de fondo esté centrada */
+    background-position: center center;
+    background-size: cover; /* Asegura que la imagen de fondo cubra la pantalla */
+  }
+
+  h1 {
+    font-size: 3rem; /* Tamaño de encabezado principal ajustado para pantallas medianas */
+  }
+
+  h2, h3 {
+    font-size: 1.5rem; /* Tamaño de encabezados secundarios ajustado para pantallas medianas */
+  }
+}
+
+/* Ajustes para teléfonos */
+@media (max-width: 480px) {
+  body {
+    background-attachment: scroll; /* Hace que la imagen de fondo no esté fija */
+  }
+
+  h1 {
+    font-size: 2.5rem; /* Tamaño más pequeño para encabezados principales en teléfonos */
+  }
+
+  h2 {
+    font-size: 1.2rem; /* Tamaño ajustado para encabezados secundarios */
+  }
+
+  h3 {
+    font-size: 1rem; /* Tamaño ajustado para encabezados terciarios */
+  }
+
+  .Home-content {
+    padding: 1rem; /* Ajusta el padding para pantallas pequeñas */
   }
 }

@@ -1,70 +1,97 @@
-@font-face {
-  font-family: 'Azonix';
-  src: url('../fonts/azonix/Azonix.otf') format('truetype');
+.Footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(51, 51, 51, 0.8);
+  color: white;
+  padding: 1rem -2rem;
+  display: flex;
+  justify-content:space-between; /* Alinea los elementos principales a los extremos */
+  align-items:center; /* Alinea verticalmente */
+  flex-wrap:wrap;
+  box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 1000;
 }
 
-.Footer {
-  background-color: rgba(51, 51, 51, 0.8); /* Fondo oscuro con opacidad */
-  color: white;
-  padding: 0.5rem 1rem; /* Padding reducido */
-  display: flex;
-  align-items: center;
-  justify-content: flex-end; /* Alinea todo el contenido hacia la derecha */
-  box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2); /* Sombra sutil */
-  backdrop-filter: blur(5px); /* Efecto de desenfoque reducido */
-  transition: background-color 0.3s ease; /* Transición suave para el cambio de color de fondo */
-  font-family: 'Azonix', sans-serif; /* Cambiado a Azonix */
+.hidden {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.visible {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .Footer-logo {
   display: flex;
   align-items: center;
-  margin-right: auto; /* Empuja el logo hacia la izquierda */
 }
 
 .Footer-logo img {
-  height: 50px; /* Tamaño del logo */
+  height: 60px;
+  width: auto;
 }
 
 .Footer-info {
-  display: flex;
-  align-items: center; /* Centra verticalmente el contenido */
-  margin-left: 1rem; /* Espacio a la izquierda del logo */
-}
-
-.Footer-contact {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Centra verticalmente el contenido */
+  display:contents;
+  flex-direction:column-reverse;
+  justify-content: center;
+  text-align: left;
+  margin-left: 1rem;
 }
 
 .Footer-contact p {
-  margin: 0.3rem 0; /* Espacio reducido entre los párrafos */
-  font-size: 0.9rem; /* Tamaño de fuente ajustado */
-  color: #e0e0e0; /* Color del texto */
-}
-
-.Footer-contact i {
-  margin-right: 1.5rem; /* Espacio entre el ícono y el texto */
+  margin: .8rem 0;
+  font-size: 1rem;
 }
 
 .Footer-social {
   display: flex;
-  align-items: center;
-  gap: 2.8rem; /* Espacio reducido entre los íconos sociales */
+  gap: 3.5rem;
 }
 
 .Footer-social a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 25px; /* Tamaño de los íconos */
-  height: 25px;
-  color: rgb(181, 181, 181); /* Color de los íconos */
-  font-size: 1.5rem; /* Tamaño del ícono */
-  transition: color 0.3s ease; /* Transición suave para el color */
+  font-size: 1.8rem;
+  color: rgb(181, 181, 181);
+  transition: color 0.3s ease;
 }
 
 .Footer-social a:hover {
-  color: #ffffff; /* Color de los íconos al pasar el cursor */
+  color: white;
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .Footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .Footer-logo {
+    margin-bottom: 1rem;
+  }
+
+  .Footer-info {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .Footer-social {
+    justify-content:space-between;
+  }
+}
+
+@media (max-width: 480px) {
+  .Footer-contact p {
+    font-size: 0.8rem;
+  }
+
+  .Footer-social a {
+    font-size: 1.2rem;
+  }
 }

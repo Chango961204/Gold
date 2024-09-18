@@ -1,0 +1,13 @@
+// mixins.scss
+@mixin respond-to($media) {
+    @if $media == phone {
+      @media (max-width: 768px) { @content; }
+    }
+    @if $media == tablet {
+      @media (min-width: 768px) and (max-width: 1024px) { @content; }
+    }
+    @if $media == desktop {
+      @media (min-width: 1024px) { @content; }
+    }
+  }
+  

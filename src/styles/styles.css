@@ -1,0 +1,167 @@
+/* Estilos generales */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('../assets/fondo.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos generales para la barra de navegación */
+.Navbar {
+  background-color: rgba(0, 0, 0, 0.7); /* Ajusta el color según tu diseño */
+  color: white;
+  padding: 0.5rem 2rem;
+  font-family: 'Azonix', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.Navbar.transparent {
+  background-color: rgba(0, 0, 0, 0.0);
+}
+
+.Navbar.dark {
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.Navbar.scrolled-up {
+  transform: translateY(0);
+}
+
+.Navbar.scrolled-down {
+  transform: translateY(-100%);
+}
+
+.Navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.Navbar-logo-img {
+  height: 50px;
+  width: auto;
+}
+
+.Navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+.Navbar-menu .nav-link {
+  font-family: 'Azonix', sans-serif;
+  color: #a9a9a9;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  position: relative;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  padding: 0.5rem .75rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(50px);
+  animation: slideInRight 0.5s ease-out forwards;
+}
+
+.Navbar-menu .nav-link:hover {
+  color: #e2e0e0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.Navbar-menu .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #D5DBDB;
+  transition: width 0.3s ease;
+}
+
+.Navbar-menu .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Animaciones */
+@keyframes slideInRight {
+  0% {
+      opacity: 0;
+      transform: translateX(50px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+/* Estilos específicos para pantallas pequeñas */
+@media (max-width: 768px) {
+  body {
+      font-size: 14px;
+  }
+
+  .Navbar {
+      padding: 0.5rem 1rem;
+      flex-direction: column;
+      align-items: stretch;
+  }
+
+  .Navbar-brand {
+      margin-bottom: 1rem;
+      width: 100%;
+  }
+
+  .Navbar-toggle {
+      width: 100%;
+  }
+
+  .Navbar-menu {
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 100%;
+      margin-top: 0.5rem;
+      align-items: stretch;
+  }
+
+  .Navbar-menu .nav-link {
+      font-size: 1rem;
+      padding: 0.75rem 1rem;
+      text-align: center;
+      width: 100%;
+  }
+}
+
+/* Estilos específicos para pantallas medianas (tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+      font-size: 16px;
+  }
+
+  .Navbar-menu .nav-link {
+      font-size: 0.9rem;
+  }
+}
+
+/* Estilos específicos para pantallas grandes (desktops) */
+@media (min-width: 1025px) {
+  body {
+      font-size: 18px;
+  }
+
+  .Navbar-menu .nav-link {
+      font-size: 0.9rem;
+  }
+}
