@@ -37,7 +37,7 @@ const CustomNavbar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="Navbar-menu">
             <Nav.Link href="/" onClick={() => setExpanded(false)}>Inicio</Nav.Link>
-            <Nav.Link href="/Venta" onClick={() => setExpanded(false)}>Venta</Nav.Link>
+            <Nav.Link href="/Venta" onClick={() => setExpanded(false)}>GoldPrice</Nav.Link>
             <Nav.Link href="/about" onClick={() => setExpanded(false)}>¿Quiénes Somos?</Nav.Link>
             <Nav.Link href="/contact" onClick={() => setExpanded(false)}>Contacto</Nav.Link>
             <Nav.Link href="/Funcionamiento" onClick={() => setExpanded(false)}>Cómo Funciona</Nav.Link>

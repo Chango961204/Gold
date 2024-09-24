@@ -4,21 +4,23 @@
     align-items: center;
     color: white;
     min-height: 100vh;
-    padding-top: 15vh; /* Ajusta el espacio superior para que las tarjetas estén más abajo de la mitad */
+    padding-top: 15vh; 
 }
 
 .Contact-cards {
+    margin: 80px auto;
+    font-size: clamp(24px,4vw +1rem, 48px);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1.5rem;
     width: 100%;
     max-width: 1200px;
-    position: fixed; /* Mantiene el contenedor de tarjetas fijo */
-    top: 60%; /* Ajusta la posición vertical para que las tarjetas estén más abajo de la mitad */
+    position: fixed;
+    top: 60%; 
     left: 50%;
-    transform: translate(-50%, 0); /* Centra el contenedor horizontalmente */
-    z-index: 1000; /* Asegura que el contenedor esté por encima de otros elementos */
+    transform: translate(-50%, 0); 
+    z-index: 1000;
 }
 
 .Contact-card {
@@ -37,7 +39,6 @@
     animation: slideUp 1s ease-out forwards;
 }
 
-/* Efecto hover para las tarjetas de contacto */
 .Contact-card:hover {
     transform: translateY(-10px) rotate(3deg);
     box-shadow: 0 8px 16px rgba(255, 255, 255, 0.6);
@@ -90,64 +91,67 @@
     }
     
     .Contact-cards {
-        top: 50%; /* Ajusta la posición vertical para pantallas pequeñas */
+        flex-direction: column; /* Coloca las tarjetas una debajo de otra */
+        top: 40%; /* Baja más las tarjetas en pantallas pequeñas */
+        gap: 1rem; /* Reduce el espacio entre las tarjetas */
     }
 
     .Contact-card {
-        max-width: 90%; /* Aumenta el ancho máximo para pantallas pequeñas */
+        max-width: 90%; /* Aumenta el ancho máximo para asegurar que ocupen más espacio */
+        margin-bottom: 1rem; /* Asegura un buen espaciado entre las tarjetas */
     }
 
     .Contact-card-title {
-        font-size: 1.25rem; /* Ajusta el tamaño del título para pantallas pequeñas */
+        font-size: 1.25rem;
     }
 
     .Contact-card-button {
-        font-size: 0.875rem; /* Ajusta el tamaño de la fuente del botón para pantallas pequeñas */
+        font-size: 0.875rem;
     }
 }
 
 /* Estilos para pantallas medianas (tabletas) */
 @media (min-width: 577px) and (max-width: 768px) {
     .Contact {
-        padding-top: 10vh; /* Ajusta el espacio superior para pantallas medianas */
+        padding-top: 10vh;
     }
-    
+
     .Contact-cards {
-        top: 55%; /* Ajusta la posición vertical para pantallas medianas */
+        top: 55%;
     }
 
     .Contact-card {
-        max-width: 45%; /* Ajusta el ancho máximo para pantallas medianas */
+        max-width: 45%;
     }
 
     .Contact-card-title {
-        font-size: 1.375rem; /* Ajusta el tamaño del título para pantallas medianas */
+        font-size: 1.375rem;
     }
 
     .Contact-card-button {
-        font-size: 0.9rem; /* Ajusta el tamaño de la fuente del botón para pantallas medianas */
+        font-size: 0.9rem;
     }
 }
 
 /* Estilos para pantallas grandes (escritorios) */
 @media (min-width: 769px) {
     .Contact {
-        padding-top: 10vh; /* Mantiene el espacio superior para pantallas grandes */
+        padding-top: 10vh;
     }
 
     .Contact-cards {
-        top: 60%; /* Mantiene la posición vertical para pantallas grandes */
+        top: 60%;
     }
 
     .Contact-card {
-        max-width: 30%; /* Mantiene el ancho máximo para pantallas grandes */
+        max-width: 30%;
     }
 
     .Contact-card-title {
-        font-size: 1.5rem; /* Mantiene el tamaño del título para pantallas grandes */
+        font-size: 1.5rem;
     }
 
     .Contact-card-button {
-        font-size: 1rem; /* Mantiene el tamaño de la fuente del botón para pantallas grandes */
+        font-size: 1rem;
     }
 }
