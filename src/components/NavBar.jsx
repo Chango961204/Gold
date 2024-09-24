@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import Logo from "../assets/LogoA.png";
-import "./Navbar.css";
+import "./NavBar.css";
 
 const CustomNavbar = () => {
   const [expanded, setExpanded] = useState(false);
