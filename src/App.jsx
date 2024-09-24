@@ -1,7 +1,7 @@
 // src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import Navbar from './components/NavBar.jsx';
 import AppRoutes from './routes/routes';
 import Footer from './components/Footer'; // Importa el componente Footer
 import './App.css';
