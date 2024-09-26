@@ -1,157 +1,92 @@
-.Contact {
+.contact-card-container { 
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    min-height: 100vh;
-    padding-top: 15vh; 
-}
-
-.Contact-cards {
-    margin: 80px auto;
-    font-size: clamp(24px,4vw +1rem, 48px);
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 1.5rem;
-    width: 100%;
-    max-width: 1200px;
-    position: fixed;
-    top: 60%; 
-    left: 50%;
-    transform: translate(-50%, 0); 
-    z-index: 1000;
+    align-items: flex-start; /* Alinear desde la parte superior */
+    height: auto; /* Cambiar a auto para ajustar el contenido */
+    padding: 500px 20px 20px; /* Reducir el padding superior */
+    margin: 0;
+    position: relative;
 }
-
-.Contact-card {
-    flex: 1;
-    min-width: 150px;
-    max-width: 300px;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.1);
+  
+.contact-card {
+    margin-top: 200px; /* Reducir el margen superior para elevar las tarjetas */
+    margin-bottom: 20%; /* Mantener el margen inferior */
+    background: rgba(255, 255, 255, 0); /* Fondo transparente */
     border-radius: 15px;
-    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
-    opacity: 1;
-    animation: slideUp 1s ease-out forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease; /* Transiciones */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque en el fondo */
+    padding: 20px; /* Espacio interno de la tarjeta */
+    text-align: center; /* Centrar el texto */
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(20px); /* Mover hacia abajo para la animación */
 }
 
-.Contact-card:hover {
-    transform: translateY(-10px) rotate(3deg);
-    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    filter: brightness(1.2);
+/* Fondos de las tarjetas */
+#whatsapp-card, #facebook-card, #instagram-card, #email-card {
+    background-image: url('../assets/sellotransparente.png'); /* Reemplaza con la URL de fondo */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Efecto al pasar el cursor sobre la tarjeta */
+.contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Títulos de las tarjetas */
-.Contact-card-title {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-    color: #ffcc00;
+.contact-card .card-title {
+    font-size: 20px; /* Tamaño de fuente más pequeño */
+    margin: 0 0 10px; /* Espaciado debajo del título */
+    font-weight: 600; /* Mantener un peso de fuente claro */
 }
 
-/* Botón de las tarjetas */
-.Contact-card-button {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.75rem 1.5rem;
-    border-radius: 25px;
-    border: 1px solid white;
+/* Descripción dentro de la tarjeta */
+.contact-card .card-description {
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+    margin: 0; /* Sin margen para un diseño más limpio */
+    font-weight: 300; /* Peso ligero para un estilo minimalista */
+    color: rgba(255, 255, 255, 0.85); /* Texto blanco con transparencia */
+}
+
+/* Botón de WhatsApp */
+.contact-card a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     color: white;
-    background-color: transparent;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+    font-weight: 600;
     text-decoration: none;
+    background-color: rgba(37, 211, 102, 0.9); /* Verde WhatsApp */
+    padding: 8px 15px; /* Espaciado interno más pequeño */
+    border-radius: 20px; /* Bordes redondeados */
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3); /* Sombra para el botón */
 }
 
-.Contact-card-button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+.contact-card a:hover {
+    background-color: rgba(25, 180, 85, 0.9); /* Color más oscuro al pasar el cursor */
+    transform: scale(1.05); /* Efecto de agrandamiento */
 }
 
-/* Animaciones */
-@keyframes slideUp {
-    0% {
-        opacity: 0;
-        transform: translateY(100px);
+/* Hacer la tarjeta y el contenido responsivo */
+@media (max-width: 768px) {
+    .contact-card-container {
+        flex-direction: column;
+        align-items: center;
     }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Estilos para pantallas pequeñas (teléfonos) */
-@media (max-width: 576px) {
-    .Contact {
-        padding-top: 5vh; /* Ajusta el espacio superior para pantallas pequeñas */
-    }
-    
-    .Contact-cards {
-        flex-direction: column; /* Coloca las tarjetas una debajo de otra */
-        top: 40%; /* Baja más las tarjetas en pantallas pequeñas */
-        gap: 1rem; /* Reduce el espacio entre las tarjetas */
-    }
-
-    .Contact-card {
-        max-width: 90%; /* Aumenta el ancho máximo para asegurar que ocupen más espacio */
-        margin-bottom: 1rem; /* Asegura un buen espaciado entre las tarjetas */
-    }
-
-    .Contact-card-title {
-        font-size: 1.25rem;
-    }
-
-    .Contact-card-button {
-        font-size: 0.875rem;
+  
+    .contact-card {
+        width: 90%; /* Hacer las tarjetas más anchas en pantallas pequeñas */
+        margin-bottom: 30px; /* Espacio adicional entre las tarjetas */
     }
 }
 
-/* Estilos para pantallas medianas (tabletas) */
-@media (min-width: 577px) and (max-width: 768px) {
-    .Contact {
-        padding-top: 10vh;
-    }
-
-    .Contact-cards {
-        top: 55%;
-    }
-
-    .Contact-card {
-        max-width: 45%;
-    }
-
-    .Contact-card-title {
-        font-size: 1.375rem;
-    }
-
-    .Contact-card-button {
-        font-size: 0.9rem;
-    }
-}
-
-/* Estilos para pantallas grandes (escritorios) */
-@media (min-width: 769px) {
-    .Contact {
-        padding-top: 10vh;
-    }
-
-    .Contact-cards {
-        top: 60%;
-    }
-
-    .Contact-card {
-        max-width: 30%;
-    }
-
-    .Contact-card-title {
-        font-size: 1.5rem;
-    }
-
-    .Contact-card-button {
-        font-size: 1rem;
-    }
+/* Estilo para mostrar la tarjeta al cargar */
+.contact-card.show {
+    opacity: 1; /* Hacer visible la tarjeta */
+    transform: translateY(0); /* Mover a su posición original */
 }

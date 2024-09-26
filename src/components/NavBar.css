@@ -1,16 +1,18 @@
 /* Fuente personalizada */
 @font-face {
   font-family: 'Azonix';
-  src: url('../fonts/azonix/Azonix.otf') format('opentype');
+  src: url('../fonts/azonix/Azonix.woff2') format('woff2'),
+       url('../fonts/azonix/Azonix.woff') format('woff'),
+       url('../fonts/azonix/Azonix.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 /* Barra de navegación */
 .Navbar {
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente por defecto */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
   color: white;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1.5rem; /* Reducir padding en pantallas pequeñas */
   font-family: 'Azonix', sans-serif;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: fixed;
@@ -20,7 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.5s ease, transform 0.5s ease;
 }
 
 .Navbar.transparent {
@@ -28,15 +30,14 @@
 }
 
 .Navbar.dark {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-.Navbar.scrolled-up {
-  transform: translateY(0);
-}
-
-.Navbar.scrolled-down {
-  transform: translateY(-100%);
+/* Ajuste de la altura de la navbar en pantallas pequeñas */
+@media (max-width: 768px) {
+  .Navbar {
+    padding: 0.3rem 1rem;
+  }
 }
 
 .Navbar-brand {
@@ -45,7 +46,7 @@
 }
 
 .Navbar-logo-img {
-  height: 50px;
+  height: 45px;
   width: auto;
 }
 
@@ -53,31 +54,15 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  flex-wrap: nowrap;
 }
 
 .Navbar-menu .nav-link {
   font-family: 'Azonix', sans-serif;
   color: #a9a9a9;
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: 0.5px;
-  position: relative;
-  transition: color 0.3s ease, background-color 0.3s ease;
-  padding: 0.5rem .75rem;
+  font-size: 0.9rem; /* Tamaño de fuente reducido */
+  padding: 0.5rem 0.75rem;
+  transition: color 0.3s ease;
   border-radius: 8px;
-  white-space: nowrap;
-  opacity: 0;
-  transform: translateX(50px);
-  animation: slideInRight 0.5s ease-out forwards;
-}
-
-.Navbar-menu .nav-link:nth-child(2) {
-  animation-delay: 0.4s;
-}
-
-.Navbar-menu .nav-link:nth-child(3) {
-  animation-delay: 0.5s;
 }
 
 .Navbar-menu .nav-link:hover {
@@ -85,222 +70,89 @@
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.Navbar-menu .nav-link::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background-color: #D5DBDB;
-  transition: width 0.3s ease;
+/* Asegura que el contenido debajo del navbar no quede cubierto */
+body {
+  margin-top: 70px; /* Dejar espacio para la barra de navegación fija */
 }
 
-.Navbar-menu .nav-link:hover::after {
-  width: 100%;
-}
-
-@keyframes slideInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@media (max-width: 992px) {
-  .Navbar {
-    padding: 0.5rem 1rem;
-    flex-direction: column;
-    align-items: stretch;
-    background-color: rgba(0, 0, 0, 0.9); /* Más visible en dispositivos móviles */
-  }
-
-  .Navbar-brand {
-    margin-bottom: 1rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
+/* Diseño responsive para pantallas pequeñas */
+@media (max-width: 576px) {
   .Navbar-menu {
-    flex-direction: column;
-    gap: 0.5rem;
-    width: 100%;
-    margin-top: 0.5rem;
-    align-items: stretch;
+    flex-direction: column; /* Coloca el menú en columna */
+    align-items: flex-start; /* Alinear a la izquierda */
   }
 
   .Navbar-menu .nav-link {
-    font-size: 1rem;
     padding: 0.75rem 1rem;
-    text-align: center;
-    width: 100%;
-    animation: slideInRight 0.5s ease-out forwards;
+    font-size: 0.85rem;
   }
 }
 
-@media (min-width: 1200px) {
-  .Navbar-logo-img {
-    height: 60px;
-  }
-
-  .Navbar-menu .nav-link {
-    font-size: 0.9rem;
-  }
-}
-
-/* Estilos para las tarjetas de contacto */
+/* Estilo para las tarjetas de contacto */
 .Contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    min-height: 100vh; 
-    padding-top: 100px; /* Ajusta el espacio superior para que las tarjetas estén más abajo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  min-height: 100vh;
+  padding-top: 70px; /* Dejar espacio para el navbar */
+  overflow-y: auto; /* Permite scroll vertical */
 }
 
 .Contact-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    width: 100%;
-    max-width: 1200px;
-    position: fixed;
-    top: 50%; /* Ajusta la posición vertical */
-    left: 50%;
-    transform: translate(-50%, -50%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem; /* Ajuste del espacio entre tarjetas */
+  width: 100%;
+  max-width: 1200px;
+  padding: 1rem;
 }
 
 .Contact-card {
-    flex: 1;
-    min-width: 250px; /* Aumenta el ancho mínimo */
-    max-width: 350px; /* Aumenta el ancho máximo */
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 20px; /* Esquinas más redondeadas */
-    text-align: center;
-    color: white;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
-    backdrop-filter: blur(15px); /* Filtro de desenfoque más fuerte */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
-    opacity: 1;
-    animation: slideUp 1s ease-out forwards;
+  flex: 1;
+  min-width: 250px;
+  max-width: 350px;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
 
 .Contact-card:hover {
-    transform: translateY(-15px) rotate(2deg); /* Más elevación y ligera rotación */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
-    border: 1px solid rgba(255, 255, 255, 0.6); /* Borde más visible */
-    filter: brightness(1.3); /* Aumenta el brillo */
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
 
-.Contact-card-title {
-    font-size: 1.75rem; /* Título más grande */
-    margin-bottom: 1rem;
-    font-weight: 600; /* Más negrita */
-    color: #ffcc00;
-}
-
-.Contact-card-button {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 1rem 2rem;
-    border-radius: 30px; /* Borde más redondeado */
-    border: 1px solid white;
-    color: white;
-    background-color: transparent;
-    font-size: 1.1rem; /* Tamaño de fuente del botón */
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    text-decoration: none;
-}
-
-.Contact-card-button:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-    transform: scale(1.05); /* Agranda ligeramente el botón */
-}
-
-@keyframes slideUp {
-    0% {
-        opacity: 0;
-        transform: translateY(100px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Estilos para pantallas pequeñas (teléfonos) */
+/* Diseño responsive para pantallas pequeñas */
 @media (max-width: 576px) {
-    .Contact {
-        padding-top: 30px; /* Ajusta el espacio superior para pantallas pequeñas */
-    }
-    
-    .Contact-cards {
-        top: 40%; /* Ajusta la posición vertical para pantallas pequeñas */
-    }
+  .Contact-cards {
+    display: block; /* Coloca las tarjetas en una sola columna */
+    padding: 0 1rem;
+    overflow-x: auto; /* Permite scroll horizontal */
+    scroll-snap-type: x mandatory; /* Establece el tipo de scroll */
+    display: flex;
+    flex-wrap: nowrap; /* Mantiene las tarjetas en una línea */
+  }
 
-    .Contact-card {
-        max-width: 100%; /* Asegura que las tarjetas ocupen todo el ancho disponible */
-        padding: 1rem; /* Reduce el padding para pantallas pequeñas */
-    }
-
-    .Contact-card-title {
-        font-size: 1.25rem; /* Ajusta el tamaño del título para pantallas pequeñas */
-    }
-
-    .Contact-card-button {
-        font-size: 0.875rem; /* Ajusta el tamaño de la fuente del botón para pantallas pequeñas */
-    }
+  .Contact-card {
+    flex: 0 0 80%; /* Ocupa el 80% del ancho en móvil */
+    scroll-snap-align: center; /* Alinea al centro */
+    margin-bottom: 1.5rem; /* Espacio entre las tarjetas */
+  }
 }
 
-/* Estilos para pantallas medianas (tabletas) */
-@media (min-width: 577px) and (max-width: 768px) {
-    .Contact {
-        padding-top: 50px; /* Ajusta el espacio superior para pantallas medianas */
-    }
-    
-    .Contact-cards {
-        top: 45%; /* Ajusta la posición vertical para pantallas medianas */
-    }
-
-    .Contact-card {
-        max-width: 45%; /* Ajusta el ancho máximo para pantallas medianas */
-    }
-
-    .Contact-card-title {
-        font-size: 1.375rem; /* Ajusta el tamaño del título para pantallas medianas */
-    }
-
-    .Contact-card-button {
-        font-size: 0.9rem; /* Ajusta el tamaño de la fuente del botón para pantallas medianas */
-    }
-}
-
-/* Estilos para pantallas grandes (escritorios) */
-@media (min-width: 769px) {
-    .Contact {
-        padding-top: 100px; /* Mantiene el espacio superior para pantallas grandes */
-    }
-
-    .Contact-cards {
-        top: 50%; /* Mantiene la posición vertical para pantallas grandes */
-    }
-
-    .Contact-card {
-        max-width: 30%; /* Mantiene el ancho máximo para pantallas grandes */
-    }
-
-    .Contact-card-title {
-        font-size: 1.75rem; /* Mantiene el tamaño del título para pantallas grandes */
-    }
-
-    .Contact-card-button {
-        font-size: 1.1rem; /* Mantiene el tamaño de la fuente del botón para pantallas grandes */
-    }
+/* Animaciones */
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

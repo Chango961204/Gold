@@ -1,95 +1,131 @@
-@keyframes slideUp {
+/* Asegúrate de que todos los estilos se aplican solo a los elementos dentro de la clase .home-container */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+}
+
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Coloca el contenido más abajo de la mitad de la pantalla */
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  animation: fadeInUp 1.2s ease-out forwards; /* Animación de entrada */
+  opacity: 0; /* Invisible al principio para la animación */
+}
+
+/* Fondo de la tarjeta */
+.home-container .card {
+  background: rgba(255, 255, 255, 0.2); /* Fondo blanco con transparencia */
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 30px; /* Espacio interno */
+  width: 85%; /* Ajuste responsivo */
+  max-width: 420px; /* Ancho máximo en pantallas grandes */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25), /* Sombra normal */
+              0 15px 40px rgba(0, 0, 0, 0.1); /* Sombra adicional detrás de la tarjeta */
+  text-align: center;
+  color: #ffffff; /* Texto blanco */
+  position: fixed; /* Fijo para que no se mueva al hacer scroll */
+  bottom: 12%; /* Ajusta la altura desde el fondo */
+  z-index: 1;
+  background: url('../assets/sellotransparente.png') no-repeat center center; /* Fondo personalizado */
+  background-size: cover;
+  transition: all 0.4s ease; /* Transiciones suaves */
+}
+
+/* Resaltar la tarjeta al pasar el cursor */
+.home-container .card:hover {
+  transform: translateY(-10px); /* Eleva ligeramente la tarjeta */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), /* Sombra más intensa al elevar */
+              0 20px 60px rgba(0, 0, 0, 0.2); /* Sombra más profunda detrás */
+}
+
+/* Título de la tarjeta */
+.home-container .card-title {
+  font-size: 26px;
+  margin: 0 0 15px;
+  font-weight: bold;
+  letter-spacing: 1.2px; /* Espaciado de letras */
+  text-shadow: 0 4px 10px rgba(255, 255, 255, 0.3); /* Sombra ligera en el texto */
+}
+
+/* Descripción dentro de la tarjeta */
+.home-container .card-description {
+  font-size: 18px;
+  margin: 0 0 25px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85); /* Texto blanco con transparencia */
+}
+
+/* Botón de WhatsApp */
+.home-container a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: rgba(37, 211, 102, 0.9); /* Verde WhatsApp */
+  padding: 12px 25px;
+  border-radius: 25px; /* Bordes redondeados */
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3); /* Sombra para el botón */
+}
+
+.home-container a:hover {
+  background-color: rgba(25, 180, 85, 0.9); /* Color más oscuro al pasar el cursor */
+  transform: scale(1.05); /* Efecto de agrandamiento */
+}
+
+/* Ícono de WhatsApp */
+.home-container .fab.fa-whatsapp {
+  font-size: 24px;
+  margin-right: 8px; /* Espacio entre el ícono y el texto */
+}
+
+/* Hacer la tarjeta y el contenido responsivo */
+@media (max-width: 768px) {
+  .home-container .card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-container .card {
+    width: 95%;
+  }
+
+  .home-container .card-title {
+    font-size: 22px;
+  }
+
+  .home-container .card-description {
+    font-size: 16px;
+  }
+
+  .home-container a {
+    font-size: 14px;
+  }
+
+  .home-container .fab.fa-whatsapp {
+    font-size: 20px;
+  }
+}
+
+/* Animación de entrada: Tarjeta apareciendo de abajo hacia arriba */
+@keyframes fadeInUp {
   0% {
+    transform: translateY(50px); /* Empieza desde abajo */
     opacity: 0;
-    transform: translateY(100px); /* Comienza desde abajo */
   }
   100% {
-    opacity: 1;
     transform: translateY(0); /* Termina en su posición original */
+    opacity: 1;
   }
-}
-
-.Home {
-  position: relative; /* Asegura que los elementos hijos se posicionen correctamente */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* Asegura que el contenido esté centrado verticalmente */
-  overflow: hidden; /* Evita el desbordamiento */
-}
-
-.Home-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-
-.Home-cards {
-  position: fixed; /* Fija la tarjeta para que permanezca en su lugar al hacer scroll */
-  bottom: 25%; /* Ajusta la distancia desde la parte inferior de la ventana */
-  max-width: 300px; /* Tamaño máximo de la tarjeta */
-  animation: slideUp 1s ease-out; /* Aplica la animación al cargar la página */
-  animation-fill-mode: forwards; /* Asegura que la animación se mantenga en la posición final */
-}
-
-.Home-card {
-  border: none; /* Elimina el borde de la tarjeta */
-  border-radius: 20px; /* Bordes redondeados */
-  background: rgba(255, 255, 255, 0.1); /* Fondo blanco con opacidad */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-  padding: 1rem;
-  text-align: center;
-  backdrop-filter: blur(10px); /* Desenfoque del fondo detrás de la tarjeta */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para transformaciones y sombras */
-}
-
-.Home-card:hover {
-  transform: translateY(-10px); /* Desplazamiento hacia arriba al hacer hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más prominente al hacer hover */
-}
-
-.Home-card-background {
-  padding: 0;
-}
-
-.Home-card-title {
-  font-size: 1.2rem;
-  font-weight: 600; /* Negrita para el título */
-  color: rgb(255, 255, 255);
-  margin-bottom: 0.5rem;
-}
-
-.Home-card-button {
-  background-color: rgba(255, 255, 255, 0.1); /* Fondo transparente */
-  border: 1px solid white; /* Borde blanco para mayor visibilidad */
-  border-radius: 20px; /* Bordes redondeados para el botón */
-  color: white; /* Color del texto del botón */
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: background-color 2.3s ease; /* Transición suave para el hover */
-}
-
-.Home-card-button:hover {
-  background-color: rgba(255, 255, 255, 0.3); /* Fondo ligeramente más visible al hacer hover */
-}
-
-/* Imagen de fondo (opcional) */
-.Home-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('../assets/sellotransparente.png'); /* Reemplaza con la ruta de tu imagen */
-  background-size: cover;
-  background-position: center;
-  z-index: -1; /* Asegura que la imagen de fondo esté detrás del contenido de la tarjeta */
-  border-radius: 20px; /* Bordes redondeados para la imagen de fondo */
-  opacity: 0.1; /* Ajusta la opacidad según sea necesario */
 }

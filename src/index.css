@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-
 @font-face {
   font-family: 'Azonix';
   src: url('../fonts/azonix/Azonix.otf') format('opentype');
@@ -36,8 +35,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  margin: 0; /* Asegura que no haya margen por defecto */
-  padding: 0; /* Asegura que no haya padding por defecto */
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
 }
 
 /* Ajusta el contenido principal */
@@ -46,7 +46,7 @@ body {
   margin: 0 auto;
   text-align: center;
   font-size: clamp(24px, 4vw + 1rem, 48px);
-  padding: 2rem; /* Añade un padding para mejorar la legibilidad */
+  padding: 2rem;
 }
 
 /* Ajustes para pantallas pequeñas */
@@ -57,33 +57,38 @@ body {
   }
 
   h1 {
-    font-size: 3rem; /* Tamaño de encabezado principal ajustado para pantallas medianas */
+    font-size: 3rem; 
   }
 
   h2, h3 {
-    font-size: 1.5rem; /* Tamaño de encabezados secundarios ajustado para pantallas medianas */
+    font-size: 1.5rem; 
+  }
+
+  .App {
+    padding: 1.5rem; /* Reduce el padding para pantallas medianas */
   }
 }
 
 /* Ajustes para teléfonos */
 @media (max-width: 480px) {
   body {
-    background-attachment: scroll; /* Hace que la imagen de fondo no esté fija */
+    background-attachment: scroll; 
+    background-size: 150%; /* Aumenta el tamaño del fondo para mejorar la visibilidad */
   }
 
   h1 {
-    font-size: 2.5rem; /* Tamaño más pequeño para encabezados principales en teléfonos */
+    font-size: 2.5rem; 
   }
 
   h2 {
-    font-size: 1.2rem; /* Tamaño ajustado para encabezados secundarios */
+    font-size: 1.2rem; 
   }
 
   h3 {
-    font-size: 1rem; /* Tamaño ajustado para encabezados terciarios */
+    font-size: 1rem; 
   }
 
-  .Home-content {
-    padding: 1rem; /* Ajusta el padding para pantallas pequeñas */
+  .App {
+    padding: 1rem; 
   }
 }

@@ -7,6 +7,8 @@ import Footer from './components/Footer'; // Importa el componente Footer
 import './App.css';
 import './styles/styles.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 function App() {

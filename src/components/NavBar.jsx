@@ -19,21 +19,17 @@ const CustomNavbar = () => {
   return (
     <Navbar
       expanded={expanded}
-      expand="md" // Colapsar en pantallas medianas o más pequeñas
+      expand="md" // El navbar se expandirá a partir de pantallas medianas
       className={`Navbar ${scrolling ? "dark" : "transparent"}`}
       onToggle={() => setExpanded(!expanded)}
       fixed="top"
     >
-      <Container fluid className="d-flex justify-content-between align-items-center">
+      <Container fluid>
         <Navbar.Brand href="/" className="Navbar-brand">
           <img src={Logo} alt="Logo" className="Navbar-logo-img" />
-      
-
-        <Navbar.Toggle
-          aria-controls="basic-navbar-nav"
-          onClick={() => setExpanded(expanded ? false : "expanded")}
-        />
-
+        </Navbar.Brand>
+        
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="Navbar-menu">
             <Nav.Link href="/" onClick={() => setExpanded(false)}>Inicio</Nav.Link>
@@ -44,7 +40,6 @@ const CustomNavbar = () => {
             <Nav.Link href="/Preguntas" onClick={() => setExpanded(false)}>Preguntas Frecuentes</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        </Navbar.Brand>
       </Container>
     </Navbar>
   );
