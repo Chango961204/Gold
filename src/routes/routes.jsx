@@ -12,8 +12,8 @@ function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
+      <Route path="/About" element={<About />} />
+      <Route path="/Contact" element={<Contact />} />
       <Route path="/Funcionamiento" element={<Funcionamiento />} />
       <Route path="/Preguntas" element={<Preguntas />} />
       <Route path="/Precios" element={<Precios />} />
