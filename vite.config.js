@@ -4,8 +4,17 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: './', 
   server: {
-    host: '0.0.0.0', // Permite conexiones desde cualquier IP en la red local
-    port: process.env.PORT || 3000 // Usa el puerto definido por Render, si está disponible
-  }
+    host: '0.0.0.0', 
+    port: process.env.PORT || 3000 
+  },
+  build: {
+    outDir: 'dist',
+  },
+  resolve: {
+    alias: {
+      '@': '/src', 
+    },
+  },
 });
