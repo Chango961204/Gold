@@ -8,10 +8,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "predeploy": "gh-pages -d build",
-    "deploy": "gh-pages -d build",
-    "postbuild": "cp build/index.html build/200.html"
+    "preview": "vite preview"
+
+
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.6.0",
