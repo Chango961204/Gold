@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Home from '../pages/Home'; // Verifica esta ruta
-import About from '../pages/About'; // Verifica esta ruta
-import Contact from '../pages/Contact'; // Verifica esta ruta
+import Home from '../pages/Home'; 
+import About from '../pages/About'; 
+import Contact from '../pages/Contact'; 
 import Funcionamiento from '../pages/Funcionamiento';
 import Preguntas from '../pages/Preguntas';
 import Venta from '../pages/Venta';

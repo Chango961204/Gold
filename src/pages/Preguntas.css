@@ -1,48 +1,80 @@
 .Preguntas {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.Preguntas-card {
+  width: 80%;
+  max-width: 500px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(10px); 
+  color: #fefcfc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1s ease-out;
+  margin-top: 100px; 
+}
+
+.Preguntas-card-title {
+  font-size: 1.8rem;
+  font-family: 'Azonix', sans-serif;
+  margin-bottom: 1rem;
+  text-align: center; 
+}
+
+.Preguntas-card-text {
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  text-align: justify; 
+}
+
+.Preguntas-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(255, 204, 0, 0.5); 
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20%);
+    opacity: 0;
   }
-  
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
   .Preguntas-card {
-    width: 80%;
-    max-width: 500px;
-    padding: 1.5rem;
-    border-radius: 12px;
-    background-color: rgba(0, 0, 0, 0.5); /* Transparencia */
-    backdrop-filter: blur(10px); /* Desenfoque del fondo */
-    color: #fefcfc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: fadeInUp 1s ease-out;
+    width: 90%;
+    margin-top: 70px; 
   }
-  
+
   .Preguntas-card-title {
-    font-size: 1.8rem;
-    font-family: 'Azonix', sans-serif;
-    margin-bottom: 1rem;
+    font-size: 1.6rem; 
   }
-  
+
   .Preguntas-card-text {
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
   }
-  
-  .Preguntas-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .Preguntas-card {
+    width: 85%;
+    margin-top: 90px; 
   }
-  
-  @keyframes fadeInUp {
-    from {
-      transform: translateY(20%);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
+
+  .Preguntas-card-title {
+    font-size: 1.7rem; 
   }
-  
+
+  .Preguntas-card-text {
+    font-size: 1rem; 
+  }
+}

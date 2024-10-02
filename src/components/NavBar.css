@@ -1,4 +1,3 @@
-/* Fuente personalizada */
 @font-face {
   font-family: 'Azonix';
   src: url('../fonts/azonix/Azonix.woff2') format('woff2'),
@@ -10,9 +9,9 @@
 
 /* Barra de navegación */
 .Navbar {
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  background-color: rgba(0, 0, 0, 0.5); 
   color: white;
-  padding: 0.5rem 1.5rem; /* Reducir padding en pantallas pequeñas */
+  padding: 0.5rem 1.5rem; 
   font-family: 'Azonix', sans-serif;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: fixed;
@@ -33,7 +32,6 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Ajuste de la altura de la navbar en pantallas pequeñas */
 @media (max-width: 768px) {
   .Navbar {
     padding: 0.3rem 1rem;
@@ -70,16 +68,14 @@
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-/* Asegura que el contenido debajo del navbar no quede cubierto */
 body {
-  margin-top: 70px; /* Dejar espacio para la barra de navegación fija */
+  margin-top: 70px; 
 }
 
-/* Diseño responsive para pantallas pequeñas */
 @media (max-width: 576px) {
   .Navbar-menu {
-    flex-direction: column; /* Coloca el menú en columna */
-    align-items: flex-start; /* Alinear a la izquierda */
+    flex-direction: column; 
+    align-items: flex-start; 
   }
 
   .Navbar-menu .nav-link {
@@ -88,22 +84,21 @@ body {
   }
 }
 
-/* Estilo para las tarjetas de contacto */
 .Contact {
   display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
   min-height: 100vh;
-  padding-top: 70px; /* Dejar espacio para el navbar */
-  overflow-y: auto; /* Permite scroll vertical */
+  padding-top: 70px;
+  overflow-y: auto; 
 }
 
 .Contact-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem; /* Ajuste del espacio entre tarjetas */
+  gap: 1.5rem; 
   width: 100%;
   max-width: 1200px;
   padding: 1rem;
@@ -127,25 +122,23 @@ body {
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* Diseño responsive para pantallas pequeñas */
 @media (max-width: 576px) {
   .Contact-cards {
-    display: block; /* Coloca las tarjetas en una sola columna */
+    display: block; 
     padding: 0 1rem;
-    overflow-x: auto; /* Permite scroll horizontal */
-    scroll-snap-type: x mandatory; /* Establece el tipo de scroll */
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
     display: flex;
-    flex-wrap: nowrap; /* Mantiene las tarjetas en una línea */
+    flex-wrap: nowrap; 
   }
 
   .Contact-card {
-    flex: 0 0 80%; /* Ocupa el 80% del ancho en móvil */
-    scroll-snap-align: center; /* Alinea al centro */
-    margin-bottom: 1.5rem; /* Espacio entre las tarjetas */
+    flex: 0 0 80%; 
+    scroll-snap-align: center; 
+    margin-bottom: 1.5rem; 
   }
 }
 
-/* Animaciones */
 @keyframes slideUp {
   0% {
     opacity: 0;
