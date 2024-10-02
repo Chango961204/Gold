@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Azonix';
-  src: url('../fonts/azonix/Azonix.woff2') format('woff2'),
-       url('../fonts/azonix/Azonix.woff') format('woff'),
+  src: url('../fonts/azonix/Azonix.otf') format('woff2'),
+       url('../fonts/azonix/Azonix.otf') format('woff'),
        url('../fonts/azonix/Azonix.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
