@@ -19,7 +19,7 @@ const CustomNavbar = () => {
   return (
     <Navbar
       expanded={expanded}
-      expand="md" // El navbar se expandirá a partir de pantallas medianas
+      expand="md" 
       className={`Navbar ${scrolling ? "dark" : "transparent"}`}
       onToggle={() => setExpanded(!expanded)}
       fixed="top"
@@ -34,8 +34,8 @@ const CustomNavbar = () => {
           <Nav className="Navbar-menu">
             <Nav.Link href="/" onClick={() => setExpanded(false)}>Inicio</Nav.Link>
             <Nav.Link href="/Venta" onClick={() => setExpanded(false)}>GoldPrice</Nav.Link>
-            <Nav.Link href="/about" onClick={() => setExpanded(false)}>¿Quiénes Somos?</Nav.Link>
-            <Nav.Link href="/contact" onClick={() => setExpanded(false)}>Contacto</Nav.Link>
+            <Nav.Link href="/About" onClick={() => setExpanded(false)}>¿Quiénes Somos?</Nav.Link>
+            <Nav.Link href="/Contact" onClick={() => setExpanded(false)}>Contacto</Nav.Link>
             <Nav.Link href="/Funcionamiento" onClick={() => setExpanded(false)}>Cómo Funciona</Nav.Link>
             <Nav.Link href="/Preguntas" onClick={() => setExpanded(false)}>Preguntas Frecuentes</Nav.Link>
           </Nav>
