@@ -12,14 +12,15 @@ function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/About" element={<About />} />
-      <Route path="/Contact" element={<Contact />} />
-      <Route path="/Funcionamiento" element={<Funcionamiento />} />
-      <Route path="/Preguntas" element={<Preguntas />} />
-      <Route path="/Precios" element={<Precios />} />
-      <Route path="/Venta" element={<Venta />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/funcionamiento" element={<Funcionamiento />} />
+      <Route path="/preguntas" element={<Preguntas />} />
+      <Route path="/precios" element={<Precios />} />
+      <Route path="/venta" element={<Venta />} />
     </Routes>
   );
 }
+
 
 export default AppRoutes;
