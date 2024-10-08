@@ -9,13 +9,13 @@ const Contact = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowCards(true);
-    }, 200); // Cambia el tiempo de la animación si es necesario
+    }, 200); // Tiempo de la animación
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <div className="contact-card-container">
-      <Card style={{ width: '16rem' }} className={`contact-card m-3 ${showCards ? 'show' : ''}`} id="whatsapp-card">
+      <Card className={`contact-card m-3 ${showCards ? 'show' : ''}`} id="whatsapp-card">
         <Card.Body>
           <Card.Title className="contact-card-title">WhatsApp</Card.Title>
           <img 
@@ -34,7 +34,7 @@ const Contact = () => {
         </Card.Body>
       </Card>
 
-      <Card style={{ width: '16rem' }} className={`contact-card m-3 ${showCards ? 'show' : ''}`} id="facebook-card">
+      <Card className={`contact-card m-3 ${showCards ? 'show' : ''}`} id="facebook-card">
         <Card.Body>
           <Card.Title className="contact-card-title">Facebook</Card.Title>
           <img 
@@ -53,7 +53,7 @@ const Contact = () => {
         </Card.Body>
       </Card>
 
-      <Card style={{ width: '16rem' }} className={`contact-card m-3 ${showCards ? 'show' : ''}`} id="instagram-card">
+      <Card className={`contact-card m-3 ${showCards ? 'show' : ''}`} id="instagram-card">
         <Card.Body>
           <Card.Title className="contact-card-title">Instagram</Card.Title>
           <img 
@@ -72,7 +72,7 @@ const Contact = () => {
         </Card.Body>
       </Card>
 
-      <Card style={{ width: '16rem' }} className={`contact-card m-3 ${showCards ? 'show' : ''}`} id="email-card">
+      <Card className={`contact-card m-3 ${showCards ? 'show' : ''}`} id="email-card">
         <Card.Body>
           <Card.Title className="contact-card-title">Correo</Card.Title>
           <img 
@@ -81,7 +81,7 @@ const Contact = () => {
             style={{ width: '32px', height: '32px', marginLeft: '8px' }} 
           />
           <a 
-            href="mailto:aguilagoldmx@gmail.com" // Cambiado a mailto para abrir el cliente de correo
+            href="mailto:aguilagoldmx@gmail.com"
             target="_blank" 
             rel="noopener noreferrer" 
             className="contact-btn-email"

@@ -1,78 +1,72 @@
 .contact-card-container { 
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Alinear desde la parte superior */
-    height: auto; /* Cambiar a auto para ajustar el contenido */
-    padding: 500px 20px 20px; /* Reducir el padding superior */
+    align-items: flex-start;
+    height: auto;
+    padding: 400px 20px 20px; 
     margin: 0;
     position: relative;
 }
   
 .contact-card {
-    margin-top: 200px; /* Reducir el margen superior para elevar las tarjetas */
-    margin-bottom: 20%; /* Mantener el margen inferior */
-    background: rgba(255, 255, 255, 0); /* Fondo transparente */
+    margin-top: 100px; 
+    margin-bottom: 20%;
+    background: rgba(255, 255, 255, 0);
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     color: white;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease; /* Transiciones */
-    backdrop-filter: blur(5px); /* Efecto de desenfoque en el fondo */
-    padding: 20px; /* Espacio interno de la tarjeta */
-    text-align: center; /* Centrar el texto */
-    opacity: 0; /* Inicialmente oculto */
-    transform: translateY(20px); /* Mover hacia abajo para la animación */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
 }
 
-/* Fondos de las tarjetas */
 #whatsapp-card, #facebook-card, #instagram-card, #email-card {
-    background-image: url('../assets/sellotransparente.png'); /* Reemplaza con la URL de fondo */
+    background-image: url('../assets/sellotransparente.png');
     background-size: cover;
     background-position: center;
 }
 
-/* Efecto al pasar el cursor sobre la tarjeta */
 .contact-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Títulos de las tarjetas */
 .contact-card .card-title {
-    font-size: 20px; /* Tamaño de fuente más pequeño */
-    margin: 0 0 10px; /* Espaciado debajo del título */
-    font-weight: 600; /* Mantener un peso de fuente claro */
+    font-size: 20px;
+    margin: 0 0 10px;
+    font-weight: 600;
 }
 
-/* Descripción dentro de la tarjeta */
 .contact-card .card-description {
-    font-size: 14px; /* Tamaño de fuente más pequeño */
-    margin: 0; /* Sin margen para un diseño más limpio */
-    font-weight: 300; /* Peso ligero para un estilo minimalista */
-    color: rgba(255, 255, 255, 0.85); /* Texto blanco con transparencia */
+    font-size: 14px;
+    margin: 0;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.85);
 }
 
-/* Botón de WhatsApp */
 .contact-card a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 14px; /* Tamaño de fuente más pequeño */
+    font-size: 14px;
     font-weight: 600;
     text-decoration: none;
-    background-color: rgba(37, 211, 102, 0.9); /* Verde WhatsApp */
-    padding: 8px 15px; /* Espaciado interno más pequeño */
-    border-radius: 20px; /* Bordes redondeados */
+    background-color: rgba(37, 211, 102, 0.9);
+    padding: 8px 15px;
+    border-radius: 20px;
     transition: background 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3); /* Sombra para el botón */
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
 }
 
 .contact-card a:hover {
-    background-color: rgba(25, 180, 85, 0.9); /* Color más oscuro al pasar el cursor */
-    transform: scale(1.05); /* Efecto de agrandamiento */
+    background-color: rgba(25, 180, 85, 0.9);
+    transform: scale(1.05);
 }
 
-/* Hacer la tarjeta y el contenido responsivo */
 @media (max-width: 768px) {
     .contact-card-container {
         flex-direction: column;
@@ -80,13 +74,12 @@
     }
   
     .contact-card {
-        width: 90%; /* Hacer las tarjetas más anchas en pantallas pequeñas */
-        margin-bottom: 30px; /* Espacio adicional entre las tarjetas */
+        width: 90%;
+        margin-bottom: 30px;
     }
 }
 
-/* Estilo para mostrar la tarjeta al cargar */
 .contact-card.show {
-    opacity: 1; /* Hacer visible la tarjeta */
-    transform: translateY(0); /* Mover a su posición original */
+    opacity: 1;
+    transform: translateY(0);
 }
