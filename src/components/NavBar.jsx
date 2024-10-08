@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from 'wouter';
 import Logo from "../assets/LogoA.png";
-import "./NavBar.css";
+import "./NavBar.css"; 
 
 const CustomNavbar = () => {
   const [expanded, setExpanded] = useState(false);
@@ -26,24 +26,22 @@ const CustomNavbar = () => {
       fixed="top"
     >
       <Container fluid>
-        <Navbar.Brand href="/" className="Navbar-brand">
+        <Navbar.Brand href="/" className="Navbar-brand orbitron-light">
           <img src={Logo} alt="Logo" className="Navbar-logo-img" />
         </Navbar.Brand>
         
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse 
-          id="basic-navbar-nav" 
-          className={`Navbar-menu ${expanded ? 'show' : ''}`} // Añadiendo la clase show
-        >
-          <Nav>
-            <Link href="/" onClick={() => setExpanded(false)}>Inicio</Link>
-            <Link href="/Venta" onClick={() => setExpanded(false)}>GoldPrice</Link>
-            <Link href="/About" onClick={() => setExpanded(false)}>¿Quiénes Somos?</Link>
-            <Link href="/Contact" onClick={() => setExpanded(false)}>Contacto</Link>
-            <Link href="/Funcionamiento" onClick={() => setExpanded(false)}>Cómo Funciona</Link>
-            <Link href="/Preguntas" onClick={() => setExpanded(false)}>Preguntas Frecuentes</Link>
-          </Nav>
+        <Navbar.Collapse id="basic-navbar-nav" className={`Navbar-menu ${expanded ? 'show' : ''}`}>
+        <Nav>
+        <Link href="/" onClick={() => setExpanded(false)} className="nav-link">Inicio</Link>
+        <Link href="/Venta" onClick={() => setExpanded(false)} className="nav-link">GoldPrice</Link>
+        <Link href="/About" onClick={() => setExpanded(false)} className="nav-link">¿Quiénes Somos?</Link>
+        <Link href="/Contact" onClick={() => setExpanded(false)} className="nav-link">Contacto</Link>
+        <Link href="/Funcionamiento" onClick={() => setExpanded(false)} className="nav-link">Cómo Funciona</Link>
+        <Link href="/Preguntas" onClick={() => setExpanded(false)} className="nav-link">Preguntas Frecuentes</Link>
+        </Nav>
         </Navbar.Collapse>
+
       </Container>
     </Navbar>
   );
