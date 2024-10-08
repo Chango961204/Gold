@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route,  } from 'wouter';
 import Home from '../pages/Home.jsx'; 
 import About from '../pages/About.jsx'; 
 import Contact from '../pages/Contact.jsx'; 
@@ -10,15 +10,15 @@ import Precios from '../pages/Precios.jsx';
 
 function AppRoutes() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/funcionamiento" element={<Funcionamiento />} />
-      <Route path="/preguntas" element={<Preguntas />} />
-      <Route path="/precios" element={<Precios />} />
-      <Route path="/venta" element={<Venta />} />
-    </Routes>
+    <>
+     <Route path="/" component={Home} />
+      <Route path="/about" component={About} />
+      <Route path="/contact" component={Contact} />
+      <Route path="/funcionamiento" component={Funcionamiento} />
+      <Route path="/preguntas" component={Preguntas} />
+      <Route path="/precios" component={Precios} />
+      <Route path="/venta" component={Venta} />
+    </>
   );
 }
 

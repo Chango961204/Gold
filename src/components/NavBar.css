@@ -1,18 +1,10 @@
-@font-face {
-  font-family: 'Azonix';
-  src: url('../fonts/azonix/Azonix.otf') format('woff2'),
-       url('../fonts/azonix/Azonix.otf') format('woff'),
-       url('../fonts/azonix/Azonix.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 
-/* Barra de navegación */
 .Navbar {
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
-  padding: 0.5rem 1.5rem; 
-  font-family: 'Azonix', sans-serif;
+  padding: 0.5rem 1.5rem;
+  font-family: 'Orbitron', sans-serif;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: fixed;
   width: 100%;
@@ -55,27 +47,46 @@
 }
 
 .Navbar-menu .nav-link {
-  font-family: 'Azonix', sans-serif;
+  font-family: 'Orbitron', sans-serif;
   color: #a9a9a9;
-  font-size: 0.9rem; /* Tamaño de fuente reducido */
+  font-size: 0.9rem;
   padding: 0.5rem 0.75rem;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
   border-radius: 8px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .Navbar-menu .nav-link:hover {
   color: #e2e0e0;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
 }
 
 body {
-  margin-top: 70px; 
+  margin-top: 70px;
 }
 
 @media (max-width: 576px) {
   .Navbar-menu {
-    flex-direction: column; 
-    align-items: flex-start; 
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 1rem;
+    border-radius: 8px;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .Navbar-menu.show {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .Navbar-menu .nav-link {
@@ -91,14 +102,14 @@ body {
   color: white;
   min-height: 100vh;
   padding-top: 70px;
-  overflow-y: auto; 
+  overflow-y: auto;
 }
 
 .Contact-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem; 
+  gap: 1.5rem;
   width: 100%;
   max-width: 1200px;
   padding: 1rem;
@@ -124,18 +135,18 @@ body {
 
 @media (max-width: 576px) {
   .Contact-cards {
-    display: block; 
+    display: block;
     padding: 0 1rem;
-    overflow-x: auto; 
-    scroll-snap-type: x mandatory; 
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
     display: flex;
-    flex-wrap: nowrap; 
+    flex-wrap: nowrap;
   }
 
   .Contact-card {
-    flex: 0 0 80%; 
-    scroll-snap-align: center; 
-    margin-bottom: 1.5rem; 
+    flex: 0 0 80%;
+    scroll-snap-align: center;
+    margin-bottom: 1.5rem;
   }
 }
 

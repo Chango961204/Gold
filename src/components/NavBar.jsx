@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
+import { Link } from 'wouter';
 import Logo from "../assets/LogoA.png";
 import "./NavBar.css";
 
@@ -19,7 +20,7 @@ const CustomNavbar = () => {
   return (
     <Navbar
       expanded={expanded}
-      expand="md" 
+      expand="md"
       className={`Navbar ${scrolling ? "dark" : "transparent"}`}
       onToggle={() => setExpanded(!expanded)}
       fixed="top"
@@ -30,14 +31,17 @@ const CustomNavbar = () => {
         </Navbar.Brand>
         
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="Navbar-menu">
-            <Nav.Link href="/" onClick={() => setExpanded(false)}>Inicio</Nav.Link>
-            <Nav.Link href="/Venta" onClick={() => setExpanded(false)}>GoldPrice</Nav.Link>
-            <Nav.Link href="/About" onClick={() => setExpanded(false)}>¿Quiénes Somos?</Nav.Link>
-            <Nav.Link href="/Contact" onClick={() => setExpanded(false)}>Contacto</Nav.Link>
-            <Nav.Link href="/Funcionamiento" onClick={() => setExpanded(false)}>Cómo Funciona</Nav.Link>
-            <Nav.Link href="/Preguntas" onClick={() => setExpanded(false)}>Preguntas Frecuentes</Nav.Link>
+        <Navbar.Collapse 
+          id="basic-navbar-nav" 
+          className={`Navbar-menu ${expanded ? 'show' : ''}`} // Añadiendo la clase show
+        >
+          <Nav>
+            <Link href="/" onClick={() => setExpanded(false)}>Inicio</Link>
+            <Link href="/Venta" onClick={() => setExpanded(false)}>GoldPrice</Link>
+            <Link href="/About" onClick={() => setExpanded(false)}>¿Quiénes Somos?</Link>
+            <Link href="/Contact" onClick={() => setExpanded(false)}>Contacto</Link>
+            <Link href="/Funcionamiento" onClick={() => setExpanded(false)}>Cómo Funciona</Link>
+            <Link href="/Preguntas" onClick={() => setExpanded(false)}>Preguntas Frecuentes</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

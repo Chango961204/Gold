@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Router } from 'wouter';
 import Navbar from './components/NavBar.jsx';
 import AppRoutes from './routes/routes.jsx';
 import Footer from './components/Footer.jsx'; 

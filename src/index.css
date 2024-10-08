@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 @font-face {
-  font-family: 'Azonix';
-  src: url('../fonts/azonix/Azonix.otf') format('opentype');
+  font-family: 'Orbitron'; /* Cambié el nombre de la fuente aquí */
+  src: url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;600&display=swap') format('woff2'); /* Ajusta el formato si es necesario */
 }
 
 @keyframes slideIn {
