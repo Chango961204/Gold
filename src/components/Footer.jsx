@@ -4,36 +4,37 @@ import Logo from '../assets/LogoA.png';
 
 function Footer() {
   const [showFooter, setShowFooter] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      // Detectar si el usuario está haciendo scroll hacia abajo
-      if (currentScrollY > lastScrollY) {
-        // Muestra el footer cuando el usuario está en la parte inferior de la página
-        const scrollPosition = window.innerHeight + currentScrollY;
-        const bottomPosition = document.documentElement.offsetHeight - 100; // Ajusta este valor si es necesario
-        
-        if (scrollPosition >= bottomPosition) {
-          setShowFooter(true);
-        }
+    const handleMouseMove = (event) => {
+      const { clientY } = event;
+      // Detectar si el cursor está cerca de la parte inferior de la pantalla
+      if (clientY >= window.innerHeight - 50) { // Ajusta el valor según lo necesites
+        setShowFooter(true);
       } else {
-        // Oculta el footer cuando el usuario sube el scroll
         setShowFooter(false);
       }
-      
-      setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    const handleTouchMove = (event) => {
+      const touchY = event.touches[0].clientY; // Obtiene la posición del dedo
+      // Detectar si el toque está cerca de la parte inferior de la pantalla
+      if (touchY >= window.innerHeight - 50) { // Ajusta el valor según lo necesites
+        setShowFooter(true);
+      } else {
+        setShowFooter(false);
+      }
+    };
 
-    // Limpia el evento cuando el componente se desmonte
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('touchmove', handleTouchMove); // Agregar el listener para touchmove
+
+    // Limpia los eventos cuando el componente se desmonte
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('touchmove', handleTouchMove); // Limpiar touchmove
     };
-  }, [lastScrollY]);
+  }, []);
 
   return (
     <footer className={`Footer ${showFooter ? 'visible' : 'hidden'}`}>
@@ -45,7 +46,7 @@ function Footer() {
           <a href="https://www.facebook.com/profile.php?id=61565766957756" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
             <i className="fab fa-facebook-f"></i>
           </a>
-          <a href="https://wa.me/+524921240600" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <a href="https://wa.me/+524922009694" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
             <i className="fab fa-whatsapp"></i>
           </a>
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">

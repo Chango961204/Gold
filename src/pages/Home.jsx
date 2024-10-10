@@ -1,20 +1,26 @@
-import React from 'react';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import Image from 'react-bootstrap/Image';
+import Row from 'react-bootstrap/Row';
 import './Home.css'; 
 
 function Home() {
-
   return (
-    <div className="home-container">
-      <div className="card">
-        <div className="card-content">
-          <h2 className="card-title">Bienvenido</h2>
-          <p className="card-description">¡Contáctanos a través de WhatsApp!</p>
-          <a href="https://wa.me/+524921240600" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-            <i className="fab fa-whatsapp"></i>
+    <Container>
+      <Row>
+        <Col xs={6} md={4} className="bg-image-col">
+          <a href="https://wa.me/+524922009694" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             aria-label="WhatsApp" 
+             className="whatsapp-btn">
+            <i className="fab fa-whatsapp"></i> Mandanos un mensaje por WhatsApp.
           </a>
-        </div>
-      </div>
-    </div>
+          <p className='info-text'>No vendemos, Compramos!</p>
+          <h3 className='bienvenido-text'>Bienvenido.</h3>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

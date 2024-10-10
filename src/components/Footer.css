@@ -5,7 +5,7 @@
   width: 100%;
   background-color: rgba(51, 51, 51, 0.8);
   color: white;
-  padding: 1rem -2rem;
+  padding: 1rem 1.5rem;
   display: flex;
   justify-content:space-between; /* Alinea los elementos principales a los extremos */
   align-items:center; /* Alinea verticalmente */
@@ -34,6 +34,7 @@
 .Footer-logo img {
   height: 60px;
   width: auto;
+  right: 20%;
 }
 
 .Footer-info {
@@ -58,6 +59,7 @@
   font-size: 1.8rem;
   color: rgb(181, 181, 181);
   transition: color 0.3s ease;
+  margin-left: 1rem;
 }
 
 .Footer-social a:hover {

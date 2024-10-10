@@ -28,7 +28,7 @@ function Venta() {
   return (
     <div className="gold-price-container">
       <h1>Precios del Oro</h1>
-      <h3>Nuestros precios se actualizan Automaticamente Gracias a la API de GoldApi</h3>
+      <h3>Nuestros precios son de compra y se actualizan Automaticamente gracias a GoldApi</h3>
       {goldPrice ? (
         <table className="price-table">
           <tbody>

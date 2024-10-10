@@ -1,17 +1,114 @@
-.home-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100vh;
-  padding: 0;
-  margin: 0;
-  position: relative;
+.bg-image-col {
+  background-image: url('../assets/sellotransparente.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: fixed;
+  top: 70vh; /* Ajusta este valor para computadoras */
+  left: 10%; /* Aumenta este valor para mover la imagen más a la derecha */
+  transform: translateY(-50%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  animation: fadeInMove 1s forwards ease-in-out;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.4s ease;
 }
 
-@keyframes fadeIn {
+@keyframes fadeInMove {
   0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
+
+.bg-image-col:hover {
+  transform: translateY(-60%) scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.whatsapp-btn {
+  position: absolute;
+  bottom: 35px;
+  right: -300px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #25D366;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateX(30px);
+  animation: fadeInButton 1.5s forwards ease-in-out 0.5s;
+  transition: background-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+@keyframes fadeInButton {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.whatsapp-btn:hover {
+  background-color: #128C7E;
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.whatsapp-btn i {
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-btn:hover i {
+  transform: rotate(20deg);
+}
+
+.info-text {
+  position: absolute;
+  bottom: -10px;
+  right: -210px;
+  font-size: 14px;
+  text-align: center;
+  color: #f5f3f3;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInText 1.7s forwards ease-in-out 0.8s;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.bienvenido-text {
+  position: absolute;
+  bottom: -20px;
+  right: -150px;
+  font-size: 14px;
+  text-align: center;
+  color: #f5f3f3;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInText 1.7s forwards ease-in-out 0.9s;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
   100% {
     opacity: 1;
@@ -19,57 +116,54 @@
   }
 }
 
-.home-container .card {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 30px;
-  padding: 15px;
-  width: 100%;
-  max-width: 300px;
-  height: 200px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 0 8px 30px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 12px;
-  position: fixed;
-  bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-  background: url('../assets/sellotransparente.png') no-repeat center center;
-  background-size: cover;
-  opacity: 0;
-  animation: fadeIn 1s ease-out forwards;
-  transition: all 0.4s ease;
+@media (max-width: 768px) {
+  .bg-image-col {
+    width: 150px;
+    height: 150px;
+    top: 70vh;
+    left: 0px;
+  }
+
+  .whatsapp-btn {
+    bottom: 40px;
+    right: -250px;
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .info-text {
+    right: -180px;
+    font-size: 12px;
+  }
+
+  .bienvenido-text {
+    right: -130px;
+    font-size: 12px;
+  }
 }
 
-.home-container .card:hover {
-  transform: translateX(-50%) translateY(-3%);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 20px 50px rgba(0, 0, 0, 0.2);
-  color: rgba(255, 255, 255, 1);
-}
+@media (max-width: 480px) {
+  .bg-image-col {
+    width: 120px;
+    height: 120px;
+    top: 60vh;
+    left: -30px;
+  }
 
-.home-container a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 11px;
-  font-weight: 500;
-  text-decoration: none;
-  background-color: #28a745;
-  padding: 8px 18px;
-  border-radius: 15px;
-  margin-top: 15px;
-  transition: background 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 3px 10px rgba(40, 167, 69, 0.2);
-}
+  .whatsapp-btn {
+    bottom: 30px;
+    right: -200px;
+    font-size: 10px;
+    padding: 8px 14px;
+  }
 
-.home-container a:hover {
-  background-color: #218838;
-  transform: scale(1.05);
-}
+  .info-text {
+    right: -160px;
+    font-size: 10px;
+  }
 
-.home-container .fab.fa-whatsapp {
-  font-size: 16px;
-  margin-right: 6px;
+  .bienvenido-text {
+    right: -120px;
+    font-size: 10px;
+  }
 }

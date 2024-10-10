@@ -5,22 +5,25 @@
     height: auto;
     padding: 400px 20px 20px; 
     margin: 0;
-    position: relative;
+    position:relative;
 }
-  
+
 .contact-card {
     margin-top: 100px; 
     margin-bottom: 20%;
     background: rgba(255, 255, 255, 0);
-    border-radius: 15px;
+    border-radius: 50%; /* Hacer que la tarjeta sea redonda */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     color: white;
     transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
     backdrop-filter: blur(5px);
-    padding: 20px;
     text-align: center;
     opacity: 0;
     transform: translateY(20px);
+    width: 20vw; /* Usar un ancho basado en el viewport */
+    height: 20vw; /* Usar una altura basada en el viewport */
+    max-width: 250px; /* Establecer un ancho máximo */
+    max-height: 250px; /* Establecer una altura máxima */
 }
 
 #whatsapp-card, #facebook-card, #instagram-card, #email-card {
@@ -67,6 +70,13 @@
     transform: scale(1.05);
 }
 
+@media (max-width: 1024px) {
+    .contact-card {
+        width: 25vw; /* Ajustar el ancho para pantallas más pequeñas */
+        height: 25vw; /* Ajustar la altura para pantallas más pequeñas */
+    }
+}
+
 @media (max-width: 768px) {
     .contact-card-container {
         flex-direction: column;
@@ -74,8 +84,16 @@
     }
   
     .contact-card {
-        width: 90%;
+        width: 30vw; /* Ajustar el ancho para tabletas */
+        height: 30vw; /* Ajustar la altura para tabletas */
         margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-card {
+        width: 40vw; /* Ajustar el ancho para pantallas pequeñas */
+        height: 40vw; /* Ajustar la altura para pantallas pequeñas */
     }
 }
 
